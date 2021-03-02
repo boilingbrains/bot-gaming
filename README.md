@@ -9,5 +9,4 @@ Ce projet consiste à réaliser un bot Python qui surveille le prix d'une liste 
 │   📜README.md
 │   📜miniature.jpg
 │   📜BotGaming.py
-└───📂CodesArduino
 ```
