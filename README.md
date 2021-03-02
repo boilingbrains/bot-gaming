@@ -8,7 +8,7 @@ Dès que le prix d'un des jeux passe sous le seuil associé, un mail est envoyé
 📦project
 │   📜README.md
 │   📜miniature.jpg
-└───📜BotGaming.py
+└───📜GamingBot.py
 ```
 
 ## Explications
