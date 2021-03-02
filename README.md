@@ -11,3 +11,11 @@ Dès que le prix d'un jeu passe sous le seuil associé, un mail est envoyé pour
 │   📜miniature.jpg
 └───📜BotGaming.py
 ```
+
+## Explications
+
+<span style="display:block;text-align:center">
+
+[![](miniature.jpg#center)](https://youtu.be/YDBAWGB8N_0)
+
+</span>
