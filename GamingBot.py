@@ -35,7 +35,7 @@ games_prices = [""]*len(games_urls)
 for i in range(len(games_urls)):
     page = requests.get(games_urls[i])
     parser = BeautifulSoup(page.content,'html.parser')
-    games_names[i] = (parser.find(class_="title")).h1.text
+    games_names[i] = (parser.find(class_="infos mainshadow")).h1.text
     games_prices[i] = parser.find(class_="price").text
  
 #Boucle qui vérifie si le prix récupéré pour chaque jeu est inférieur au prix souhaité
