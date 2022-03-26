@@ -18,14 +18,14 @@ sendEmail = False #Variable de contrôle permettant de savoir s'il faut envoyer 
 
 #Liste des URLs des jeux dont je souhaite surveiller le prix
 games_urls = [
-"https://www.instant-gaming.com/fr/840-acheter-jeu-gog-com-cyberpunk-2077/",   
-"https://www.instant-gaming.com/fr/6970-acheter-jeu-steam-mafia-definitive-edition/",
-"https://www.instant-gaming.com/fr/2669-acheter-jeu-bethesda-doom-eternal/",
-"https://www.instant-gaming.com/fr/6667-acheter-jeu-steam-borderlands-3/",
+"https://www.instant-gaming.com/fr/4824-acheter-elden-ring-pc-jeu-steam-europe/",   
+"https://www.instant-gaming.com/fr/7110-acheter-ghostwire-tokyo-pc-jeu-steam-europe/",
+"https://www.instant-gaming.com/fr/10386-acheter-tiny-tina-s-wonderlands-edition-merveilleux-chaos-chaotic-great-edition-pc-jeu-epic-games-europe/",
+"https://www.instant-gaming.com/fr/2075-acheter-ready-or-not-early-access-pc-jeu-steam/",
 ]
 
 #Liste des prix en dessous desquels je souhaite être notifié pour chaque jeu
-prices_thresholds = [25.00, 20.00, 10.00, 15.00]
+prices_thresholds = [35.00, 30.00, 40.00, 30.00]
 
 #Listes dans lesquelles on stockera nom et prix des jeux
 games_names = [""]*len(games_urls)
@@ -35,8 +35,8 @@ games_prices = [""]*len(games_urls)
 for i in range(len(games_urls)):
     page = requests.get(games_urls[i])
     parser = BeautifulSoup(page.content,'html.parser')
-    games_names[i] = (parser.find(class_="infos mainshadow")).h1.text
-    games_prices[i] = parser.find(class_="price").text
+    games_names[i] = parser.find(class_="game-title").text
+    games_prices[i] = parser.find_all(class_="total")[1].text
  
 #Boucle qui vérifie si le prix récupéré pour chaque jeu est inférieur au prix souhaité
 #Si c'est le cas on rajoute le nom et le prix du jeu à acheter dans le contenu de l'email à envoyer
